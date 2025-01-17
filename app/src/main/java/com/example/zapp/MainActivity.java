@@ -58,6 +58,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, CourseGuideActivity.class);
                 startActivity(intent);
             }
+
+        });
+        Button timerButton = findViewById(R.id.btnTimer);
+        timerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TimerActivity.class);
+                startActivity(intent);
+            }
         });
     }
 }
