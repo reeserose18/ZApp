@@ -12,6 +12,8 @@ public class TimerActivity extends AppCompatActivity {
     private TextView timerText;
     private Button startButton;
     private Button resetButton;
+
+    private Button returnhomeButton;
     private NumberPicker minutePicker;
     private CountDownTimer countDownTimer;
     private boolean isTimerRunning = false;
@@ -26,11 +28,19 @@ public class TimerActivity extends AppCompatActivity {
         startButton = findViewById(R.id.startButton);
         resetButton = findViewById(R.id.resetButton);
         minutePicker = findViewById(R.id.minutePicker);
+        returnhomeButton = findViewById(R.id.btnHome);
 
         // Set up minute picker
         minutePicker.setMinValue(1);
         minutePicker.setMaxValue(60);
         minutePicker.setValue(1);
+
+        returnhomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // return to the previous activity
+            }
+        });
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override

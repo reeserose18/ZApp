@@ -12,14 +12,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize all buttons
+        //  buttons
         Button btnGuideW = findViewById(R.id.btnCGW);
         Button btnGuideX = findViewById(R.id.btnCGX);
         Button btnGuideY = findViewById(R.id.btnCGY);
         Button btnGuideZ = findViewById(R.id.btnCGZ);
         Button syllabusButton = findViewById(R.id.btnSyllabus);
 
-        // Set click listeners for each button
+        // click listeners
         btnGuideW.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

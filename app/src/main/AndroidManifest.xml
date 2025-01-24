@@ -21,7 +21,6 @@
                 android:value=".MainActivity" />
         </activity>
 
-        <!-- Your existing activities -->
         <activity
             android:name=".CourseGuideActivity"
             android:exported="false" />
@@ -32,6 +31,24 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".CourseGuideWActivity"
+            android:exported="false"
+            android:label="HL Lang Lit Course Concepts"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".CourseGuideXActivity"
+            android:exported="false"
+            android:label="About the HL Essay"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
     </application>
 
