@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Zamora App"
+        android:text="Welcome to Mr. Zamora's HL Lang Lit Class!"
         android:textSize="24sp"
         android:layout_gravity="center"
         android:layout_marginBottom="32dp"/>
@@ -17,25 +17,30 @@
         android:id="@+id/btnSyllabus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Syllabus"/>
+        android:text="View Class Syllabus"/>
     <Button
         android:id="@+id/btnCGW"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Course Guide W"/>
+        android:text="Hl Lang Lit Course Concepts"/>
     <Button
         android:id="@+id/btnCGX"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Course Guide X"/>
+        android:text="About the HL Essay"/>
     <Button
         android:id="@+id/btnCGY"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Course Guide Y"/>
+        android:text="About HL Paper 1"/>
     <Button
         android:id="@+id/btnCGZ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Course Guide Z"/>
+        android:text="About HL Paper 2"/>
+    <Button
+        android:id="@+id/btnTimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Timer"/>
 </LinearLayout>
