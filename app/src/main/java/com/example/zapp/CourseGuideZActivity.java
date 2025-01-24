@@ -10,7 +10,7 @@ public class CourseGuideZActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course_guide);
+        setContentView(R.layout.activity_course_guide_z);
 
         try {
             // Safely try to set up the action bar back button
