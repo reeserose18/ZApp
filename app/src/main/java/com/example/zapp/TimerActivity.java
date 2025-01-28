@@ -7,17 +7,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.media.MediaPlayer;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Handler;
 
 public class TimerActivity extends AppCompatActivity {
     private TextView timerText;
     private Button startButton;
     private Button resetButton;
-
     private Button returnhomeButton;
     private NumberPicker minutePicker;
     private CountDownTimer countDownTimer;
     private boolean isTimerRunning = false;
     private long timeLeftInMillis;
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +42,7 @@ public class TimerActivity extends AppCompatActivity {
         returnhomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // return to the previous activity
+                finish();
             }
         });
 
@@ -64,8 +68,8 @@ public class TimerActivity extends AppCompatActivity {
     }
 
     private void startTimer() {
-        if (!isTimerRunning) {
-            timeLeftInMillis = minutePicker.getValue() * 60000; // Convert minutes to milliseconds
+        if (!isTimerRunning && countDownTimer == null) {
+            timeLeftInMillis = minutePicker.getValue() * 60000;
         }
 
         countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
@@ -80,6 +84,8 @@ public class TimerActivity extends AppCompatActivity {
                 isTimerRunning = false;
                 startButton.setText("START");
                 minutePicker.setEnabled(true);
+                countDownTimer = null;
+                playAlarmSound();
             }
         }.start();
 
@@ -87,8 +93,39 @@ public class TimerActivity extends AppCompatActivity {
         minutePicker.setEnabled(false);
     }
 
+    private void playAlarmSound() {
+        try {
+            if (mediaPlayer == null) {
+                Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+                if (alarmSound == null) {
+                    alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                }
+                mediaPlayer = MediaPlayer.create(getApplicationContext(), alarmSound);
+            }
+            mediaPlayer.start();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    stopAlarmSound();
+                }
+            }, 3000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void stopAlarmSound() {
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
     private void pauseTimer() {
-        countDownTimer.cancel();
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
         isTimerRunning = false;
         minutePicker.setEnabled(true);
     }
@@ -97,6 +134,7 @@ public class TimerActivity extends AppCompatActivity {
         if (countDownTimer != null) {
             countDownTimer.cancel();
         }
+        countDownTimer = null;
         isTimerRunning = false;
         startButton.setText("START");
         minutePicker.setEnabled(true);
@@ -116,5 +154,6 @@ public class TimerActivity extends AppCompatActivity {
         if (countDownTimer != null) {
             countDownTimer.cancel();
         }
+        stopAlarmSound();
     }
 }
