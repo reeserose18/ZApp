@@ -1,47 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to Mr. Zamora's HL Lang Lit Class!"
-        android:textSize="30sp"
-        android:layout_marginTop="120dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="32dp"/>
+    <!-- Background Image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/backgroundmain"
+        android:scaleType="centerCrop"/>
 
-    <Button
-        android:id="@+id/btnSyllabus"
+    <!-- Content Container -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="View Class Syllabus"/>
-    <Button
-        android:id="@+id/btnCGW"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hl Lang Lit Course Concepts"/>
-    <Button
-        android:id="@+id/btnCGX"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="About the HL Essay"/>
-    <Button
-        android:id="@+id/btnCGY"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="About HL Paper 1"/>
-    <Button
-        android:id="@+id/btnCGZ"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="About HL Paper 2"/>
-    <Button
-        android:id="@+id/btnTimer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Timer"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Mr. Zamora's HL Lang Lit Class!"
+            android:textSize="30sp"
+            android:layout_marginTop="160dp"
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:layout_marginBottom="32dp"/>
+
+
+        <Button
+            android:id="@+id/btnSyllabus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Class Syllabus"/>
+
+        <Button
+            android:id="@+id/btnCGW"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hl Lang Lit Course Concepts"/>
+
+        <Button
+            android:id="@+id/btnCGX"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About the HL Essay"/>
+
+        <Button
+            android:id="@+id/btnCGY"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About HL Paper 1"/>
+
+        <Button
+            android:id="@+id/btnCGZ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About HL Paper 2"/>
+
+        <Button
+            android:id="@+id/btnTimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Timer"/>
+
+    </LinearLayout>
+</FrameLayout>
