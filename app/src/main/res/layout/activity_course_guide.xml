@@ -44,9 +44,6 @@
                 android:textSize="16sp"
                 android:layout_marginBottom="16dp"
                 android:text="Literary\n• Frankenstein: The 1818 Text, Mary Shelley (Penguin Classics)\n• The Collected Poetry of Nikki Giovanni: 1968-1998 (Harper Perennial Modern Classics)\n• Silence: A Novel, Shusaku Endo\n• Fiela's Child, Dalene Matthee\n• Ficciones, Jorge Luis Borges\n\nNon-Literary\n• The Smitten Kitchen (Food Blog by Deb Perelman)\n• Paintings/Sculpture by Kehinde Wiley\n• Political Cartoons by Joel Pett\n• Photography by Tom Hussey (Reflections series)\n• Additional non-literary texts TBD"/>
-
-            <!-- Continue adding more TextViews for each section of the syllabus -->
-
         </LinearLayout>
     </ScrollView>
 
