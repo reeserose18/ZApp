@@ -13,21 +13,21 @@ public class CourseGuideWActivity extends AppCompatActivity {
         setContentView(R.layout.activity_course_guide_w);
 
         try {
-            // Safely try to set up the action bar back button
+
             if (getSupportActionBar() != null) {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             }
         } catch (Exception e) {
-            // Silently handle any theme-related issues
+
         }
 
-        // Add home button at the bottom of the screen
+
         Button homeButton = findViewById(R.id.btnHome);
         if (homeButton != null) {
             homeButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finish(); // This will return to the previous activity
+                    finish(); // return to the previous activity
                 }
             });
         }

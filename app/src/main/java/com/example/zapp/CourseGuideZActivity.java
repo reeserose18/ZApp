@@ -13,12 +13,12 @@ public class CourseGuideZActivity extends AppCompatActivity {
         setContentView(R.layout.activity_course_guide_z);
 
         try {
-            // Safely try to set up the action bar back button
+
             if (getSupportActionBar() != null) {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             }
         } catch (Exception e) {
-            // Silently handle any theme-related issues
+
         }
 
         // Add home button at the bottom of the screen
@@ -27,7 +27,7 @@ public class CourseGuideZActivity extends AppCompatActivity {
             homeButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finish(); // This will return to the previous activity
+                    finish();
                 }
             });
         }
